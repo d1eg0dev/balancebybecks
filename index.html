@@ -25,7 +25,18 @@
               becks-steps.jpg (wide) · hero.jpg · about.jpg · gallery-1/2
               online-session.jpg · final.jpg
      ============================================================ -->
-<script>window.BOOKING_URL = "https://calendly.com/balancebybecks/new-meeting";</script>
+<script>
+  /* Reserva: un solo lugar. El estilo viaja por parámetros de URL —
+     Calendly sólo los aplica en plan de pago; en gratuito los ignora
+     y usa su tema por defecto, sin romper nada. */
+  window.BOOKING_URL = "https://calendly.com/balancebybecks/new-meeting";
+  window.BOOKING_STYLE = {
+    hide_gdpr_banner: 1,
+    background_color: "F9F1E6",   /* crema del sitio */
+    text_color:       "3A2F27",   /* tinta */
+    primary_color:    "A8611C"    /* naranja profundo: 4.8:1 con texto blanco */
+  };
+</script>
 <!-- <script defer data-domain="balancebybecks.com" src="https://plausible.io/js/script.js"></script> -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,12 +229,14 @@
       <div class="center stack" style="margin-bottom:clamp(26px,3.5vw,40px)">
         <span class="label">Ready when you are</span>
         <h2 class="h-lg serif">Come home <em>to your body.</em></h2>
-        <p class="lede" style="margin:0 auto">Pick a time below &mdash; the calendar shows my availability in your own time zone. Free, 30 minutes, no pressure. Just a warm conversation about where you are and where you&rsquo;d love to be.</p>
+        <p class="lede" style="margin:14px auto 0">Pick a time below &mdash; the calendar shows my availability in your own time zone. Free, 30 minutes, no pressure. Just a warm conversation about where you are and where you&rsquo;d love to be.</p>
       </div>
 
       <!-- Calendly inline; falls back to a plain link if the widget can't load -->
-      <div id="calendar" class="calendly-inline-widget booking"
-           data-url="https://calendly.com/balancebybecks/new-meeting?hide_gdpr_banner=1&background_color=ffffff&text_color=3a2f27&primary_color=e8963a">
+      <div id="calendar" class="calendly-inline-widget booking" data-auto-load="false">
+        <a class="booking__fallback" href="https://calendly.com/balancebybecks/new-meeting" hidden>
+          Open the calendar in a new tab ↗
+        </a>
         <noscript>
           <p style="padding:40px">Book your free 30-minute call:
             <a href="https://calendly.com/balancebybecks/new-meeting">calendly.com/balancebybecks</a>

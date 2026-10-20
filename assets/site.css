@@ -191,8 +191,20 @@ p{max-width:62ch}
   .sticky{position:sticky;top:clamp(24px,4vw,56px);align-self:start}
 }
 
-/* ---------- booking ---------- */
-.booking{min-height:660px;background:var(--paper);border:1px solid var(--line)}
+/* ---------- booking ----------
+   The cream matches Calendly's background_color parameter, so the widget
+   sits in the page instead of on top of it. On the free plan Calendly
+   ignores the colour parameters and renders white; the border keeps that
+   looking deliberate either way. */
+.booking{
+  min-height:660px;background:var(--cream);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+}
+.booking__fallback{
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--orange-deep);border-bottom:1px solid currentColor;padding-bottom:3px;
+}
+.booking > iframe{width:100%!important}
 
 /* ---------- prose (privacy / terms) ---------- */
 .prose h2{font-size:clamp(22px,2.4vw,30px);margin:clamp(34px,4vw,52px) 0 14px}

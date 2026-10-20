@@ -12,7 +12,18 @@
 <meta property="og:description" content="It didn't start in a yoga studio. It started in London.">
 <meta property="og:image" content="https://balancebybecks.com/images/becks-beach.jpg">
 
-<script>window.BOOKING_URL = "https://calendly.com/balancebybecks/new-meeting";</script>
+<script>
+  /* Reserva: un solo lugar. El estilo viaja por parámetros de URL —
+     Calendly sólo los aplica en plan de pago; en gratuito los ignora
+     y usa su tema por defecto, sin romper nada. */
+  window.BOOKING_URL = "https://calendly.com/balancebybecks/new-meeting";
+  window.BOOKING_STYLE = {
+    hide_gdpr_banner: 1,
+    background_color: "F9F1E6",   /* crema del sitio */
+    text_color:       "3A2F27",   /* tinta */
+    primary_color:    "A8611C"    /* naranja profundo: 4.8:1 con texto blanco */
+  };
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
@@ -140,7 +151,7 @@
     <div class="wrap wrap--narrow center stack-lg">
       <span class="label">Ready when you are</span>
       <h2 class="h-lg serif">Come home <em>to your body.</em></h2>
-      <p class="lede" style="margin:0 auto">Free, 30 minutes, no pressure. Just a warm conversation about where you are and where you&rsquo;d love to be.</p>
+      <p class="lede" style="margin:14px auto 0">Free, 30 minutes, no pressure. Just a warm conversation about where you are and where you&rsquo;d love to be.</p>
       <div class="btn-row" style="justify-content:center">
         <a class="btn" href="#book" data-book>Book a free 30-min call</a>
         <a class="btn btn--ghost" href="programme.html">Programme &amp; pricing</a>
