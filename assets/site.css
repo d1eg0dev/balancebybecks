@@ -136,8 +136,12 @@ p{max-width:62ch}
 .shot--pano{aspect-ratio:16/10}
 .shot--warrior img{object-position:center 66%}
 .shot--faq img{object-position:center 85%}
-/* How it works: a smaller photo that sits level with the text beside it */
-@media(min-width:860px){.cols:has(.shot--how){grid-template-columns:1.2fr .8fr}.shot--how{max-width:460px;justify-self:end;width:100%}}
+/* text + tall photo: keep the photo close to the height of the text beside it */
+@media(min-width:860px){
+  .cols--text-photo:has(> .shot--tall){grid-template-columns:1.2fr .8fr}
+  .cols--text-photo > .shot--tall{width:100%;max-width:460px;justify-self:end}
+  .cols--sidebar:has(> .shot--tall){grid-template-columns:minmax(0,460px) 1fr}
+}
 
 /* ---------- buttons ---------- */
 .btn{
